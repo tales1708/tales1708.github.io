@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summer Necklace Collection</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fff5f7, #ffeef1);
+      color: #5c1a1b;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f8d7da;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #b23a48;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      flex: 0 0 250px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      scroll-snap-align: center;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+      text-align: center;
+    }
+    .card-content h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+      color: #b23a48;
+    }
+    .card-content p {
+      font-size: 0.9rem;
+      color: #7a2e36;
+    }
+    button {
+      background-color: #b23a48;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #7a2e36;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌸 CHARM&CHOKER 🌸</h1>
+  </header>
+  <section class="carousel">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1622396481461-9a1a4e2e3e42" alt="Tropical Shell Necklace">
+      <div class="card-content">
+        <h3>Tropical Shell</h3>
+        <p>Natural seashell pendant for beach vibes.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1617038229878-b4e5f4913e90" alt="Sunflower Pendant">
+      <div class="card-content">
+        <h3>Sunflower Glow</h3>
+        <p>Bright sunflower charm perfect for sunny days.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1596803244666-0233e6f3b056" alt="Coral Bead Necklace">
+      <div class="card-content">
+        <h3>Coral Beads</h3>
+        <p>Vibrant coral-colored beads for a summer statement.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0648" alt="Pearl & Starfish Necklace">
+      <div class="card-content">
+        <h3>Ocean Pearl</h3>
+        <p>Elegant pearl with a touch of starfish charm.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0" alt="Boho Summer Necklace">
+      <div class="card-content">
+        <h3>Boho Summer</h3>
+        <p>Bohemian style with warm summer tones.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        button.innerText = '✓ Added!';
+        button.style.backgroundColor = '#4caf50';
+        setTimeout(() => {
+          button.innerText = 'Add to Cart';
+          button.style.backgroundColor = '#b23a48';
+        }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>
