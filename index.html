@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>root&white — Kafe Remaja Kikinian</title>
+  <meta name="description" content="root&white — kafe anak remaja dengan vibes hangat, kopi nikmat, dan dessert manis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top Progress Bar Animation -->
+  <div class="top-progress" id="topProgress"></div>
+
+  <header class="header glass">
+    <div class="container nav">
+      <a href="#" class="logo">root<span>&</span>white</a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button class="btn small ghost" id="openCart" aria-label="Buka Keranjang">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M6 6h15l-1.5 9h-12L6 6z" stroke="currentColor" stroke-width="1.5" />
+            <circle cx="9" cy="20" r="1.5" fill="currentColor"></circle>
+            <circle cx="18" cy="20" r="1.5" fill="currentColor"></circle>
+          </svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="btn small" id="openCheckout">Checkout</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Kafe Remaja Kikinian</p>
+          <h1>Hangout Manis di <span class="brand">root&white</span></h1>
+          <p class="sub">Warna dasar putih & coklat muda, rasa nyaman, dan playlist yang bikin betah. Tempat nongki favorit buat tugas, cerita, dan ketawa bareng.</p>
+          <div class="hero-cta">
+            <a href="#menu" class="btn">Lihat Menu</a>
+            <a href="#gallery" class="btn ghost">Lihat Suasana</a>
+          </div>
+          <div class="ticker">
+            <div class="ticker-track">
+              <span>Free Wi‑Fi</span>
+              <span>Colokan Banyak</span>
+              <span>Live Acoustic Weekend</span>
+              <span>Diskon Pelajar</span>
+              <span>Vibes Cozy</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="blob"></div>
+          <img class="hero-img" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1600&auto=format&fit=crop" alt="Kopi latte art di cangkir putih" />
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="mouse"><div class="wheel"></div></div>
+      </div>
+    </section>
+
+    <!-- Slider / Gallery -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Galeri Suasana</h2>
+          <p>Beberapa momen favorit di root&white.</p>
+        </div>
+        <div class="slider" aria-label="Slider foto">
+          <button class="slide-btn prev" aria-label="Sebelumnya">&#10094;</button>
+          <div class="slides" id="slides">
+            <div class="slide">
+              <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1600&auto=format&fit=crop" alt="Interior kafe hangat" />
+            </div>
+            <div class="slide">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop" alt="Kopi dan dessert" />
+            </div>
+            <div class="slide">
+              <img src="https://images.unsplash.com/photo-1525385133512-2f3bdd039054?q=80&w=1600&auto=format&fit=crop" alt="Barista meracik kopi" />
+            </div>
+            <div class="slide">
+              <img src="https://images.unsplash.com/photo-1533777419517-3e4017e2e15b?q=80&w=1600&auto=format&fit=crop" alt="Suasana bar kafe" />
+            </div>
+          </div>
+          <button class="slide-btn next" aria-label="Berikutnya">&#10095;</button>
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu & Shop -->
+    <section id="menu" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Menu Favorit</h2>
+          <p>Pilih menu, klik <em>Tambah</em>, lalu checkout. Simple!</p>
+        </div>
+
+        <div class="filters">
+          <button class="chip active" data-filter="all">Semua</button>
+          <button class="chip" data-filter="coffee">Coffee</button>
+          <button class="chip" data-filter="noncoffee">Non‑Coffee</button>
+          <button class="chip" data-filter="food">Food</button>
+          <button class="chip" data-filter="dessert">Dessert</button>
+        </div>
+
+        <div class="grid" id="productGrid">
+          <!-- Items generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container about">
+        <div class="about-text">
+          <h2>Tentang root&white</h2>
+          <p>Dimulai dari mimpi sederhana: bikin tempat yang hangat untuk tumbuh (root) dan tetap bersih (white) dalam berkarya. Kami dukung komunitas pelajar & konten kreator lokal.</p>
+          <ul class="points">
+            <li>Diskon pelajar & loyalty stamp</li>
+            <li>Ruang meeting kecil & booking event</li>
+            <li>Menu musiman & kolaborasi brand lokal</li>
+          </ul>
+        </div>
+        <div class="about-cards">
+          <div class="card">
+            <h3>Jam Operasional</h3>
+            <p>Senin–Minggu: 09.00–22.00</p>
+          </div>
+          <div class="card">
+            <h3>Alamat</h3>
+            <p>Jl. Contoh No. 123, Jakarta</p>
+          </div>
+          <div class="card">
+            <h3>Kontak</h3>
+            <p>WhatsApp: 08xx‑xxxx‑xxxx</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section alt">
+      <div class="container contact">
+        <h2>Say Hello!</h2>
+        <form id="contactForm" class="contact-form" onsubmit="event.preventDefault(); alert('Terima kasih! Pesanmu kami terima 💛'); this.reset();">
+          <div class="row">
+            <input type="text" placeholder="Nama" required>
+            <input type="email" placeholder="Email" required>
+          </div>
+          <textarea placeholder="Pesan" rows="4" required></textarea>
+          <button class="btn" type="submit">Kirim</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo small">root<span>&</span>white</div>
+        <p class="muted">© <span id="year"></span> root&white. All rights reserved.</p>
+      </div>
+      <div>
+        <p class="muted">Ikuti kami:</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">@rootwhite</a>
+          <a href="#" aria-label="TikTok">@rootwhite</a>
+          <a href="#" aria-label="X/Twitter">@rootwhite</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside class="cart" id="cart">
+    <div class="cart-head">
+      <h3>Keranjang</h3>
+      <button class="icon-btn" id="closeCart" aria-label="Tutup">✕</button>
+    </div>
+    <div class="cart-body" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="row">
+        <span>Total</span>
+        <strong id="cartTotal">Rp0</strong>
+      </div>
+      <button class="btn full" id="cartCheckout">Checkout</button>
+      <button class="btn full ghost" id="clearCart">Bersihkan</button>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Checkout Modal -->
+  <dialog id="checkoutModal" class="modal">
+    <form method="dialog" class="modal-box" id="checkoutForm">
+      <div class="modal-head">
+        <h3>Checkout</h3>
+        <button class="icon-btn" id="closeCheckout">✕</button>
+      </div>
+      <div id="checkoutSummary" class="summary"></div>
+      <div class="fields">
+        <input name="name" type="text" placeholder="Nama Penerima" required>
+        <input name="phone" type="tel" placeholder="No. HP" required>
+        <input name="address" type="text" placeholder="Alamat" required>
+        <select name="payment" required>
+          <option value="">Metode Pembayaran</option>
+          <option>Transfer Bank</option>
+          <option>QRIS</option>
+          <option>COD</option>
+        </select>
+      </div>
+      <button class="btn full" value="confirm">Bayar Sekarang</button>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
